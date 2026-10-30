@@ -1,0 +1,41 @@
+{
+  "id": "vszrnjtzdp",
+  "name": {
+    "tr": "Ürünler",
+    "en": "Products",
+    "ar": "المنتجات"
+  },
+  "description": {
+    "tr": "Parçalar «OEM» (araç üreticisinin onayladığı) ya da «eşdeğer» olarak açıkça etiketlenir; «orijinal» ibaresi yalnızca OEM parçada kullanılır.",
+    "en": "Parts are clearly labelled “OEM” (approved by the vehicle manufacturer) or “equivalent”; the word “original” is used only for OEM parts.",
+    "ar": "تُوسَم القطع بوضوح بأنها «OEM» (معتمدة من مصنّع المركبة) أو «مكافئة»؛ ولا تُستخدم كلمة «أصلية» إلا للقطع OEM."
+  },
+  "keyword": {
+    "tr": "oto yedek parça, fren, filtre, OEM",
+    "en": "auto parts, brakes, filters, OEM",
+    "ar": "قطع غيار سيارات، فرامل، فلاتر، OEM"
+  },
+  "path": "urunler",
+  "icon": "build",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "25gqw8",
+      "f1xtrt",
+      "wr032c"
+    ],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Ürünler",
+    "en": "Products",
+    "ar": "المنتجات"
+  },
+  "date": "2026-10-30T22:12:58.937Z",
+  "update": "2026-10-30T22:12:58.939Z"
+}

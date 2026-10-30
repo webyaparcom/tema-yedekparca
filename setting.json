@@ -1,0 +1,54 @@
+{
+  "order": false,
+  "user": false,
+  "description": {
+    "tr": "Dişli Oto Yedek Parça: fren, filtre, motor ve süspansiyon parçaları; OEM ve eşdeğer parça açıkça etiketli, stok sorma. (Demo site)",
+    "en": "Disli Auto Parts: brake, filter, engine and suspension parts; OEM and equivalent parts clearly labelled, stock enquiries. (Demo site)",
+    "ar": "ديشلي لقطع غيار السيارات: قطع الفرامل والفلاتر والمحرك والتعليق مع وسم واضح للقطع OEM والمكافئة وطلب الاستعلام عن المخزون. (موقع تجريبي)"
+  },
+  "keyword": {
+    "tr": "oto yedek parça, fren, filtre, OEM",
+    "en": "auto parts, brakes, filters, OEM",
+    "ar": "قطع غيار سيارات، فرامل، فلاتر، OEM"
+  },
+  "category": "Kurumsal",
+  "name": "Dişli Oto Yedek Parça",
+  "domain": "yedekparca.webyapar.com",
+  "langs": {
+    "tr": true,
+    "en": true,
+    "ar": true,
+    "de": false,
+    "ru": false,
+    "es": false,
+    "fr": false,
+    "it": false,
+    "ja": false,
+    "zh": false,
+    "ko": false,
+    "pt": false
+  },
+  "logo": "logo.png",
+  "multi": false,
+  "publishMode": "static",
+  "font": {
+    "body": "inter",
+    "heading": "barlow-condensed",
+    "ar": {
+      "body": "ibm-plex-sans-arabic",
+      "heading": "noto-kufi-arabic"
+    }
+  },
+  "colorScheme": "auto",
+  "theme_color": "#B4380F",
+  "seo": {
+    "noindex": true
+  },
+  "cssTokens": {
+    "--mx-radius-sm": "4px",
+    "--mx-radius-md": "6px",
+    "--mx-radius-lg": "8px",
+    "--mx-radius-xl": "11px"
+  },
+  "icon": "icon.png"
+}
