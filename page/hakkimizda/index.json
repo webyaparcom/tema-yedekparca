@@ -1,0 +1,47 @@
+{
+  "name": {
+    "tr": "Hakkımızda",
+    "en": "About",
+    "ar": "من نحن"
+  },
+  "status": "play",
+  "category": "",
+  "id": "hakkimizda",
+  "url": "",
+  "path": "hakkimizda",
+  "index": 4,
+  "icon": "info",
+  "desing": {
+    "header": [],
+    "body": [
+      "i7ig95",
+      "3zf0ge"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "Dişli Oto Yedek Parça, servislere ve bireysel müşterilere doğru parçayı doğru etiketle ulaştırmayı ilke edinen kurgusal bir demo firmadır. Bu sitedeki ürünler, adresler ve bilgiler kurgusaldır.",
+    "en": "Disli Auto Parts is a fictional demo company whose principle is to deliver the right part with the right label to workshops and individual customers. Products, addresses and details on this site are fictional.",
+    "ar": "ديشلي لقطع غيار السيارات شركة تجريبية افتراضية مبدؤها إيصال القطعة الصحيحة بالوسم الصحيح إلى الورش والعملاء الأفراد. المنتجات والعناوين والبيانات في هذا الموقع افتراضية."
+  },
+  "spot": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "desc": {},
+  "title": {
+    "tr": "Hakkımızda",
+    "en": "About",
+    "ar": "من نحن"
+  },
+  "keyword": {
+    "tr": "hakkımızda",
+    "en": "about",
+    "ar": "من نحن"
+  },
+  "text": {},
+  "update": "2026-10-30T22:12:58.961Z",
+  "date": "2026-10-30"
+}
