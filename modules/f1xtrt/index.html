@@ -1,149 +1,90 @@
-<section class="modulex-tline">
-  <div class="modulex-tline-container">
-    <div class="modulex-tline-header">
-      <div class="modulex-tline-badge">{{badge}}</div>
-      <h2 class="modulex-tline-title">{{title}}</h2>
-      <p class="modulex-tline-desc">{{description}}</p>
-    </div>
-    <div class="modulex-tline-list">
-      {{html}}
-    </div>
+<section class="modulex-zaman-kapsul{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-zaman-kapsul-ic">
+    {{fbbas}}
+    {{fbgovde}}
   </div>
 </section>
 
 <style>
-  .modulex-tline {
-    width: 100%;
-    padding: 80px 20px;
-    background: --bgcolor--;
-    box-sizing: border-box;
-  }
+  /* zaman-kapsul — Kompakt, akış şeması gibi: yuvarlak hap biçimli dönemler satır satır akar; uzun metin yerine kısa kilometre taşları için. */
+  .modulex-zaman-kapsul { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-zaman-kapsul *, .modulex-zaman-kapsul *::before, .modulex-zaman-kapsul *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-zaman-kapsul :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-zaman-kapsul :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-zaman-kapsul :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-zaman-kapsul :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-zaman-kapsul img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-zaman-kapsul) img { height: auto; }
+  .modulex-zaman-kapsul [hidden] { display: none !important; }
+  .modulex-zaman-kapsul :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-zaman-kapsul :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-zaman-kapsul-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-zaman-kapsul-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-zaman-kapsul--bassiz .modulex-zaman-kapsul-bas { display: none; }
+  .modulex-zaman-kapsul-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-zaman-kapsul-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-zaman-kapsul-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-zaman-kapsul-bas { max-width: 780px; margin-inline: auto; text-align: center; justify-items: center; }
+  .modulex-zaman-kapsul-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-zaman-kapsul-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-zaman-kapsul-dugme:hover { transform: translateY(-2px); }
+  .modulex-zaman-kapsul-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-zaman-kapsul-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-zaman-kapsul-dugme .material-symbols-outlined { font-size: 20px; }
 
-  .modulex-tline-container {
-    max-width: --max--;
-    margin: 0 auto;
+  .modulex-zaman-kapsul-akis { display: flex; flex-wrap: wrap; justify-content: center; gap: 34px 40px; }
+  .modulex-zaman-kapsul-oge { position: relative; display: grid; align-content: start; gap: 12px; flex: 0 1 calc((100% - 80px) / 3); min-width: min(100%, 250px); }
+  .modulex-zaman-kapsul-oge:not(:last-child)::after { content: ""; position: absolute; inset-block-start: 28px; inset-inline-end: -38px; width: 36px; border-block-start: 2px dashed --accent--; }
+  .modulex-zaman-kapsul-kapsul { position: relative; display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 6px 20px 6px 6px; border: 1.5px solid --cizgi--; border-radius: 999px; background-color: --kartBg--; transition: border-color 0.25s ease, transform 0.25s ease; }
+  .modulex-zaman-kapsul-kapsul:dir(rtl) { padding: 6px 6px 6px 20px; }
+  .modulex-zaman-kapsul-oge:hover .modulex-zaman-kapsul-kapsul { border-color: --accent--; transform: translateY(-2px); }
+  .modulex-zaman-kapsul-cip { flex: none; display: inline-grid; place-items: center; min-width: 64px; min-height: 44px; padding: 0 14px; border-radius: 999px; background-color: --accent--; color: --accentText--; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .modulex-zaman-kapsul-ikon { flex: none; color: --accentInk--; font-size: 22px; }
+  .modulex-zaman-kapsul-kbaslik { font-size: 1rem; font-weight: 750; line-height: 1.3; }
+  .modulex-zaman-kapsul-kmetin { padding-inline: 10px; color: --muted--; font-size: 0.95rem; }
+  .modulex-zaman-kapsul--hazir:not(.modulex-zaman-kapsul--gor) .modulex-zaman-kapsul-oge { opacity: 0; transform: scale(0.96); }
+  .modulex-zaman-kapsul-oge { transition: opacity 0.5s ease, transform 0.5s ease; }
+  @media (max-width: 1024px) {
+    .modulex-zaman-kapsul-oge { flex-basis: calc((100% - 40px) / 2); }
   }
-
-  .modulex-tline-header {
-    text-align: center;
-    margin-bottom: 48px;
-  }
-
-  .modulex-tline-badge {
-    display: inline-block;
-    padding: 6px 18px;
-    background: --accent--;
-    color: --accentText--; /* 31 Eki: sabit beyaz → token */
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 16px;
-  }
-
-  .modulex-tline-title {
-    font-size: 36px;
-    font-weight: 800;
-    color: --titlecolor--;
-    margin: 0 0 12px;
-  }
-
-  .modulex-tline-desc {
-    font-size: 16px;
-    color: --textcolor--;
-    max-width: 640px;
-    margin: 0 auto;
-    line-height: 1.7;
-  }
-
-  .modulex-tline-list {
-    position: relative;
-    max-width: 760px;
-    margin: 0 auto;
-    padding-left: 34px;
-  }
-
-  .modulex-tline-list::before {
-    content: "";
-    position: absolute;
-    left: 10px;
-    top: 6px;
-    bottom: 6px;
-    width: 2px;
-    background: --linecolor--;
-  }
-
-  .modulex-tline-item {
-    position: relative;
-    padding: 0 0 32px 18px;
-    animation: tlineIn 0.5s ease both;
-  }
-
-  .modulex-tline-item:last-child {
-    padding-bottom: 0;
-  }
-
-  @keyframes tlineIn {
-    from { opacity: 0; transform: translateX(-14px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-
-  .modulex-tline-dot {
-    position: absolute;
-    left: -32px;
-    top: 4px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: --accent--;
-    border: 3px solid --bgcolor--;
-    box-shadow: 0 0 0 2px --accent--;
-  }
-
-  .modulex-tline-year {
-    display: inline-block;
-    padding: 3px 12px;
-    background: --accent--;
-    color: --accentText--; /* 31 Eki: sabit beyaz → token */
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-
-  .modulex-tline-item-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: --titlecolor--;
-    margin: 0 0 6px;
-  }
-
-  .modulex-tline-item-text {
-    font-size: 14px;
-    line-height: 1.7;
-    color: --textcolor--;
-    margin: 0;
-  }
-
   @media (max-width: 768px) {
-    .modulex-tline {
-      padding: 48px 14px;
-    }
-
-    .modulex-tline-title {
-      font-size: 26px;
-    }
-
-    [class*="modulex"] {
-      max-width: 100%;
-      box-sizing: border-box;
-    }
+    .modulex-zaman-kapsul-akis { flex-direction: column; flex-wrap: nowrap; gap: 30px; }
+    .modulex-zaman-kapsul-oge { flex-basis: auto; }
+    .modulex-zaman-kapsul-oge:not(:last-child)::after { inset-block-start: auto; inset-block-end: -26px; inset-inline-end: auto; inset-inline-start: 34px; width: 0; height: 22px; border-block-start: 0; border-inline-start: 2px dashed --accent--; }
   }
+  .modulex-zaman-kapsul-bag { color: inherit; text-decoration: none; }
+  .modulex-zaman-kapsul-bag::after { content: ""; position: absolute; inset: 0; z-index: 3; }
+  .modulex-zaman-kapsul-bag:hover { text-decoration: underline; text-underline-offset: 4px; }
 
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-zaman-kapsul :is(.modulex-zaman-kapsul-baslik, .modulex-zaman-kapsul-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-zaman-kapsul-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-zaman-kapsul { padding-inline: 16px; }
+  }
   @media (prefers-reduced-motion: reduce) {
-    [class*="modulex"],
-    [class*="modulex"] * {
-      animation: none !important;
-      transition: none !important;
-    }
+    .modulex-zaman-kapsul *, .modulex-zaman-kapsul *::before, .modulex-zaman-kapsul *::after { animation: none !important; transition: none !important; }
   }
 </style>
+<script>
+  (() => {
+    const P = "modulex-zaman-kapsul";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const gozlem = (s, P, az) => {
+        const gor = () => s.classList.add(P + "--gor");
+        s.classList.add(P + "--hazir");
+        if (az || !("IntersectionObserver" in window)) { gor(); return; }
+        const io = new IntersectionObserver((gs) => {
+          gs.forEach((g) => { if (g.isIntersecting) { gor(); io.disconnect(); } });
+        }, { threshold: 0.15 });
+        io.observe(s);
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      gozlem(s, P, az);
+    });
+  })();
+</script>
